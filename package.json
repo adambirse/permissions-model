@@ -11,6 +11,7 @@
     "prettier": "prettier --write \"src/**/*.ts\"",
     "lint": "eslint . --ext .ts",
     "lint:fix": "eslint . --ext .ts --fix",
+    "postinstall": "husky install",
     "precommit": "npm run prettier && npm run lint:fix && npm run build && npm run test"
   },
   "keywords": [],
