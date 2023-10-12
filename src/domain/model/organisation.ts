@@ -1,4 +1,4 @@
-export class User {
+export class Organisation {
   name: string;
 
   constructor(name: string) {
