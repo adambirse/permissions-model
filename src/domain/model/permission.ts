@@ -4,4 +4,8 @@ export class Permission {
   constructor(name: string) {
     this.name = name;
   }
+
+  matches(name: string) {
+    return this.name === name;
+  }
 }
