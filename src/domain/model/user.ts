@@ -1,6 +1,5 @@
 import { Organisation } from './organisation';
 import { Permission } from './permission';
-import { PermissionGroup } from './permissionGroup';
 
 export class User {
   name: string;
@@ -12,8 +11,8 @@ export class User {
     this.organisation = organisation;
     this.permissions = [];
   }
-  addPermission(permissionGroup: PermissionGroup) {
-    this.permissions.push(...permissionGroup.permissions);
+  addPermission(permissions: Permission[]) {
+    this.permissions.push(...permissions);
   }
   hasPermission(permission: string) {
     return this.permissions.some((it) => {
