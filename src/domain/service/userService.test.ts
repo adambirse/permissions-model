@@ -38,4 +38,24 @@ describe('User service', () => {
     userService.grantPermission(user.name, permission.name);
     expect(userService.get(user.name)?.permissions).toContainEqual(permission);
   });
+
+  it('check if a user has a permission', () => {
+    const userService = new UserService();
+    const organisation = new Organisation('asd');
+    const user = new User('me', organisation);
+    const permission = new Permission('new permission');
+    userService.add(user);
+    userService.grantPermission(user.name, permission.name);
+
+    expect(userService.hasPermission(user.name, permission.name)).toBeTruthy();
+  });
+
+  it('check if a user does not have a permission', () => {
+    const userService = new UserService();
+    const organisation = new Organisation('asd');
+    const user = new User('me', organisation);
+    userService.add(user);
+
+    expect(userService.hasPermission(user.name, 'unknown permission')).toBeFalsy();
+  });
 });

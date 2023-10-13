@@ -4,4 +4,5 @@ export interface UserServiceOperations {
   add(user: User);
   get(id: string);
   grantPermission(userId: string, permission: string);
+  hasPermission(userId: string, permission: string);
 }
