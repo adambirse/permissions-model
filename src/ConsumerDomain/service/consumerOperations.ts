@@ -1,3 +1,3 @@
 export interface ConsumerOperations {
-  performAction();
+  performRestrictedAction(userId: string);
 }
