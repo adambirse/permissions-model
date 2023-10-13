@@ -10,9 +10,6 @@ export class ConsumerService implements ConsumerOperations {
 
   performRestrictedAction(userId: string, requiredPermission: string): boolean {
     const user = this.userService.get(userId);
-    if (user !== undefined) {
-      return user.hasPermission(requiredPermission);
-    }
-    return false;
+    return user?.hasPermission(requiredPermission) ?? false;
   }
 }

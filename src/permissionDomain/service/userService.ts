@@ -18,12 +18,12 @@ export class UserService implements UserServiceOperations {
     });
   }
 
-  grantPermission(userId: string, permission: string) {
+  grantPermission(userId: string, permission: string): void {
     const user = this.get(userId);
     user?.addPermission([new Permission(permission)]);
   }
   hasPermission(userId: string, permission: string): boolean {
     const user = this.get(userId);
-    return user?.hasPermission(permission) || false;
+    return !!user && user.hasPermission(permission);
   }
 }
