@@ -5,7 +5,6 @@ import { UserService } from './userService';
 describe('User service', () => {
   const userService = new UserService();
 
-
   it('Successfully add multiple users', () => {
     const organisation = new Organisation('asd');
     const user = new User('me', organisation);
